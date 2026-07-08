@@ -1,167 +1,167 @@
 # AgentFlow Desk
 
-**智能工单自动化后台系统 | AI-Powered Support Workflow Automation**
+**Production-grade Python backend for AI-powered support workflow automation.**
 
-一个生产级 Python 后端系统，用大语言模型（LLM）自动化客服工单处理流程。
-
----
-
-## 这是什么？
-
-AgentFlow Desk 是一个**完整可运行的智能客服工单自动化系统**。
-
-**你上传工单，系统自动做：**
-1. 智能分类（账号问题、账单、技术故障...）
-2. 判断优先级和紧急程度
-3. 识别客户情绪（生气、平静、满意）
-4. 从知识库找相关答案
-5. 生成回复草稿
-6. 分配给对应团队
-
-全程自动，可审计，可追踪。
+A complete, runnable, production-ready Python backend system that uses Large Language Models (LLMs) to automate customer support ticket processing.
 
 ---
 
-## 为什么这个项目适合投标
+## What is this?
 
-这个项目完整展示了岗位描述里要的**所有技能**：
+AgentFlow Desk is a **complete, runnable intelligent customer support ticket automation system**.
 
-### 岗位要求里的核心技能
+**You submit a ticket, the system automatically:**
+1. Classifies it intelligently (account issues, billing, technical failures...)
+2. Determines priority and urgency level
+3. Identifies customer sentiment (angry, calm, satisfied)
+4. Retrieves relevant answers from knowledge base
+5. Generates response drafts
+6. Routes to appropriate teams
 
-| 岗位要求 | 这个项目怎么实现的 |
+Fully automated, auditable, and traceable.
+
+---
+
+## Why this project is perfect for job applications
+
+This project completely demonstrates **all skills** from the job description:
+
+### Core Skills from Job Requirements
+
+| Job Requirement | How This Project Implements It |
 |---------|------------------|
-| **Python 3.10+ 微服务** | ✓ Python 3.11，FastAPI 异步框架 |
-| **AI 和 LLM 集成** | ✓ OpenAI / Claude 统一接口，可切换 |
-| **工作流自动化** | ✓ 状态机工作流（收到→分类→检索→草稿→路由→完成） |
-| **后台任务队列** | ✓ Celery + Redis 异步处理 |
-| **REST API** | ✓ FastAPI，10+ 个端点，自动生成文档 |
-| **数据库** | ✓ PostgreSQL + 向量数据库（pgvector） |
-| **Docker 部署** | ✓ 完整 Docker Compose 配置 |
-| **CI/CD** | ✓ GitHub Actions 自动测试 |
-| **情感分析** | ✓ 工单分类包含情绪识别 |
-| **工单分类** | ✓ 自动分类 category/priority/urgency |
-| **多租户 SaaS** | ✓ 数据隔离设计 |
+| **Python 3.10+ Microservices** | ✓ Python 3.11, FastAPI async framework |
+| **AI and LLM Integration** | ✓ OpenAI / Claude unified interface, switchable |
+| **Workflow Automation** | ✓ State machine workflow (received→classified→retrieved→drafted→routed→resolved) |
+| **Background Task Queue** | ✓ Celery + Redis async processing |
+| **REST API** | ✓ FastAPI, 11 endpoints, auto-generated docs |
+| **Database** | ✓ PostgreSQL + vector database (pgvector) |
+| **Docker Deployment** | ✓ Complete Docker Compose configuration |
+| **CI/CD** | ✓ GitHub Actions automated testing |
+| **Sentiment Analysis** | ✓ Ticket classification includes emotion recognition |
+| **Ticket Classification** | ✓ Auto-classifies category/priority/urgency |
+| **Multi-tenant SaaS** | ✓ Data isolation design |
 
-### 代码质量指标
+### Code Quality Indicators
 
-- ✓ 完整类型提示（mypy 检查）
-- ✓ 代码格式化和规范检查（ruff）
-- ✓ 单元测试 + 集成测试（pytest）
-- ✓ 完整的技术设计文档（docs/design.md，15 章节）
-- ✓ 可本地运行的 Docker 环境
-- ✓ CI/CD 自动化流水线
-
----
-
-## 技术栈一览
-
-**后端框架：** FastAPI（异步高性能）  
-**AI 模型：** OpenAI GPT-4o / Claude 3.5 Sonnet（可切换）  
-**任务队列：** Celery + Redis  
-**数据库：** PostgreSQL 15 + pgvector（向量检索）  
-**部署：** Docker + Docker Compose  
-**CI/CD：** GitHub Actions  
-**测试：** pytest + coverage  
-**代码质量：** ruff + mypy  
+- ✓ Complete type hints (mypy checked)
+- ✓ Code formatting and standards checking (ruff)
+- ✓ Unit tests + integration tests (pytest)
+- ✓ Complete technical design documentation (docs/design.md, 15 chapters)
+- ✓ Locally runnable Docker environment
+- ✓ CI/CD automation pipeline
 
 ---
 
-## 快速开始（给技术人员看的）
+## Technology Stack Overview
 
-### 前置要求
+**Backend Framework:** FastAPI (async high-performance)  
+**AI Models:** OpenAI GPT-4o / Claude 3.5 Sonnet (switchable)  
+**Task Queue:** Celery + Redis  
+**Database:** PostgreSQL 15 + pgvector (vector retrieval)  
+**Deployment:** Docker + Docker Compose  
+**CI/CD:** GitHub Actions  
+**Testing:** pytest + coverage  
+**Code Quality:** ruff + mypy  
+
+---
+
+## Quick Start (For Technical Users)
+
+### Prerequisites
 
 - Python 3.11+
 - Docker & Docker Compose
 
-### 本地运行
+### Local Setup
 
 ```bash
-# 克隆仓库
-git clone https://github.com/yourusername/agentflow-desk.git
+# Clone repository
+git clone https://github.com/doaneruby970-hub/agentflow-desk.git
 cd agentflow-desk
 
-# 复制环境变量模板
+# Copy environment template
 cp .env.example .env
-# 编辑 .env，填入你的 OpenAI 或 Claude API key
+# Edit .env and add your OpenAI or Claude API key
 
-# 启动全套服务（PostgreSQL、Redis、API、Worker）
+# Start all services (PostgreSQL, Redis, API, Worker)
 docker-compose up --build
 
-# API 运行在 http://localhost:8000
-# 交互式文档在 http://localhost:8000/docs
+# API runs at http://localhost:8000
+# Interactive docs at http://localhost:8000/docs
 ```
 
-### 不用 Docker 运行
+### Run Without Docker
 
 ```bash
-# 创建虚拟环境
+# Create virtual environment
 python3.11 -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
 
-# 安装依赖
+# Install dependencies
 pip install -e ".[dev]"
 
-# 启动 PostgreSQL 和 Redis（用 Docker 或本地安装）
+# Start PostgreSQL and Redis (use Docker or local installation)
 docker-compose up -d db redis
 
-# 运行数据库迁移
+# Run database migrations
 alembic upgrade head
 
-# 启动 API 服务器
+# Start API server
 uvicorn app.main:app --reload --port 8000
 
-# 另开一个终端，启动 Celery worker
+# In another terminal, start Celery worker
 celery -A app.workers.celery_app worker --loglevel=info
 ```
 
 ---
 
-## 项目演示（给非技术人员看的）
+## Project Demo (For Non-Technical Users)
 
-### 1. 创建一个工单
+### 1. Create a Ticket
 
-**发送请求：**
+**Send request:**
 ```http
 POST http://localhost:8000/api/v1/tickets
 Content-Type: application/json
 
 {
-  "subject": "无法登录我的账号",
-  "body": "我尝试重置密码但是链接不工作，很着急",
+  "subject": "Cannot login to my account",
+  "body": "I tried resetting password but the link doesn't work, very urgent",
   "source": "email"
 }
 ```
 
-**系统返回：**
+**System returns:**
 ```json
 {
   "id": "550e8400-e29b-41d4-a716-446655440000",
-  "subject": "无法登录我的账号",
+  "subject": "Cannot login to my account",
   "status": "open",
   "created_at": "2026-07-08T10:30:00Z"
 }
 ```
 
-### 2. 系统自动分类工单
+### 2. System Auto-Classifies Ticket
 
-后台 Worker 自动调用 AI，几秒内完成分类：
+Background worker automatically calls AI, completes classification in seconds:
 
-- **分类：** account_access（账号访问问题）
-- **优先级：** high（高优先级）
-- **情绪：** frustrated（客户很着急）
-- **紧急度：** 8/10
+- **Category:** account_access (account access issue)
+- **Priority:** high (high priority)
+- **Sentiment:** frustrated (customer is anxious)
+- **Urgency:** 8/10
 
-### 3. 查看工单详情
+### 3. View Ticket Details
 
 ```http
 GET http://localhost:8000/api/v1/tickets/550e8400-e29b-41d4-a716-446655440000
 ```
 
-**返回结果：**
+**Returns:**
 ```json
 {
   "id": "550e8400-e29b-41d4-a716-446655440000",
-  "subject": "无法登录我的账号",
+  "subject": "Cannot login to my account",
   "status": "open",
   "category": "account_access",
   "priority": "high",
@@ -173,18 +173,18 @@ GET http://localhost:8000/api/v1/tickets/550e8400-e29b-41d4-a716-446655440000
       "category": "account_access",
       "confidence": 0.94
     },
-    "draft_reply": "您好！我理解您无法登录的焦急心情..."
+    "draft_reply": "Hello! I understand your login frustration..."
   }
 }
 ```
 
-### 4. 查看系统指标
+### 4. View System Metrics
 
 ```http
 GET http://localhost:8000/api/v1/metrics
 ```
 
-**返回结果：**
+**Returns:**
 ```json
 {
   "total_tickets": 127,
@@ -206,379 +206,379 @@ GET http://localhost:8000/api/v1/metrics
 
 ---
 
-## API 端点一览
+## API Endpoints Overview
 
-### 工单管理
+### Ticket Management
 
-| 方法 | 路径 | 说明 |
+| Method | Path | Description |
 |------|------|------|
-| POST | `/api/v1/tickets` | 创建新工单 |
-| GET | `/api/v1/tickets` | 列出所有工单（分页） |
-| GET | `/api/v1/tickets/{id}` | 查询单个工单详情 |
-| POST | `/api/v1/tickets/{id}/classify` | 触发工单分类 |
-| POST | `/api/v1/tickets/{id}/draft-reply` | 生成回复草稿 |
-| POST | `/api/v1/tickets/{id}/route` | 路由到团队 |
+| POST | `/api/v1/tickets` | Create new ticket |
+| GET | `/api/v1/tickets` | List all tickets (paginated) |
+| GET | `/api/v1/tickets/{id}` | Get single ticket details |
+| POST | `/api/v1/tickets/{id}/classify` | Trigger ticket classification |
+| POST | `/api/v1/tickets/{id}/draft-reply` | Generate reply draft |
+| POST | `/api/v1/tickets/{id}/route` | Route to team |
 
-### 知识库
+### Knowledge Base
 
-| 方法 | 路径 | 说明 |
+| Method | Path | Description |
 |------|------|------|
-| POST | `/api/v1/knowledge/index` | 索引新文档 |
-| POST | `/api/v1/knowledge/search` | 语义搜索 |
-| GET | `/api/v1/knowledge/documents` | 列出所有文档 |
+| POST | `/api/v1/knowledge/index` | Index new document |
+| POST | `/api/v1/knowledge/search` | Semantic search |
+| GET | `/api/v1/knowledge/documents` | List all documents |
 
-### 监控
+### Monitoring
 
-| 方法 | 路径 | 说明 |
+| Method | Path | Description |
 |------|------|------|
-| GET | `/api/v1/health` | 健康检查 |
-| GET | `/api/v1/metrics` | 系统指标统计 |
+| GET | `/api/v1/health` | Health check |
+| GET | `/api/v1/metrics` | System metrics statistics |
 
-**完整 API 文档：** 运行项目后访问 `http://localhost:8000/docs`
+**Complete API documentation:** After running project, visit `http://localhost:8000/docs`
 
 ---
 
-## 系统架构
+## System Architecture
 
 ```
 ┌──────────────┐
-│   客户端     │  ← 你的前端、移动应用、第三方系统
+│   Client     │  ← Your frontend, mobile app, third-party systems
 └──────┬───────┘
        │ HTTPS / REST
        ↓
 ┌──────────────────────────────────────┐
-│         FastAPI Gateway              │  ← 接收请求、验证、路由
+│         FastAPI Gateway              │  ← Receives requests, validates, routes
 └──┬──────────┬──────────┬────────────┘
    │          │          │
    ↓          ↓          ↓
-┌─────┐  ┌────────┐  ┌──────────┐
-│工作流│  │  LLM   │  │知识库检索│
-│引擎 │  │ 服务   │  │  服务    │
-└──┬──┘  └───┬────┘  └────┬─────┘
-   │         │            │
-   └─────────┴────────────┘
-             ↓
-   ┌──────────────────┐
-   │  Celery Workers  │  ← 后台异步处理
-   └─────────┬────────┘
-             │
-   ┌─────────┼─────────┐
-   ↓         ↓         ↓
-┌──────┐ ┌──────┐ ┌──────┐
-│ PG + │ │Redis │ │向量库│
-│数据库│ │队列  │ │检索  │
-└──────┘ └──────┘ └──────┘
+┌─────────┐  ┌────────┐  ┌──────────┐
+│Workflow │  │  LLM   │  │Knowledge │
+│ Engine  │  │Service │  │Retrieval │
+└──┬──────┘  └───┬────┘  └────┬─────┘
+   │             │            │
+   └─────────────┴────────────┘
+                 ↓
+       ┌──────────────────┐
+       │  Celery Workers  │  ← Background async processing
+       └─────────┬────────┘
+                 │
+       ┌─────────┼─────────┐
+       ↓         ↓         ↓
+┌──────────┐ ┌──────┐ ┌────────┐
+│PostgreSQL│ │Redis │ │Vector  │
+│ + Data   │ │Queue │ │Retrieval│
+└──────────┘ └──────┘ └────────┘
 ```
 
-### 数据流程
+### Data Flow
 
-1. **接收** → 客户 POST 工单 → API 存入数据库 → 返回 202 Accepted
-2. **分类** → Worker 拉取任务 → LLM 分类 category/priority/sentiment → 更新数据库
-3. **检索** → Worker 查询向量数据库 → 检索相关知识文档
-4. **草稿** → LLM 根据工单内容 + 检索到的知识生成回复草稿
-5. **路由** → 规则引擎根据分类结果分配给对应团队
-6. **审计** → 所有状态变更记录到事件日志，可回放、可审计
+1. **Ingestion** → Client POST ticket → API saves to database → Returns 202 Accepted
+2. **Classification** → Worker pulls task → LLM classifies category/priority/sentiment → Updates database
+3. **Retrieval** → Worker queries vector database → Retrieves relevant knowledge documents
+4. **Drafting** → LLM generates response using ticket + retrieved knowledge
+5. **Routing** → Rule engine assigns team based on classification
+6. **Audit** → All state transitions logged to event store for replay and debugging
 
 ---
 
-## 为什么设计成这样
+## Why This Design
 
-### 1. 确定性工作流 vs 自由 Agent
+### 1. Deterministic Workflow vs Free Agent
 
-**不用：** 让 AI 自己乱跑，不知道它在干什么  
-**用：** 固定状态机，每一步明确、可审计、可回放
+**Don't use:** Let AI run wild, don't know what it's doing  
+**Do use:** Fixed state machine, every step clear, auditable, replayable
 
-**好处：**
-- 企业能信任（知道每步在干啥）
-- 出错能排查（有完整日志）
-- 性能可预测（不会陷入死循环）
+**Benefits:**
+- Enterprises can trust (know what each step does)
+- Errors can be debugged (complete logs)
+- Performance is predictable (no infinite loops)
 
-### 2. 多模型支持
+### 2. Multi-Model Support
 
-OpenAI 和 Claude 统一接口，一行配置切换：
+OpenAI and Claude unified interface, switch with one line:
 
 ```python
-# .env 文件
-LLM_PROVIDER=openai    # 或 anthropic
-LLM_MODEL=gpt-4o-mini  # 或 claude-3-5-sonnet-20241022
+# .env file
+LLM_PROVIDER=openai    # or anthropic
+LLM_MODEL=gpt-4o-mini  # or claude-3-5-sonnet-20241022
 ```
 
-**好处：**
-- 不被一家厂商绑定
-- 出故障时自动 fallback
-- 根据任务选最合适的模型
+**Benefits:**
+- Not locked to one vendor
+- Auto-fallback on failure
+- Choose best model per task
 
-### 3. 异步优先
+### 3. Async First
 
-API 立即返回，重活交给后台 Worker：
+API returns immediately, heavy work goes to background workers:
 
-- 用户不用等（API 响应 < 200ms）
-- 系统能扩展（加 Worker 机器就能处理更多）
-- 失败能重试（Worker 挂了自动重试）
+- Users don't wait (API response < 200ms)
+- System can scale (add worker machines for more throughput)
+- Failures can retry (worker crash auto-retries)
 
-### 4. 多租户从第一天
+### 4. Multi-Tenant from Day One
 
-每张表都有 `tenant_id`：
+Every table has `tenant_id`:
 
-- 一套系统服务多个客户
-- 数据天然隔离
-- 按租户计费、限流、审计
+- One system serves multiple customers
+- Data naturally isolated
+- Billing, rate limits, audits per tenant
 
 ---
 
-## 配置说明
+## Configuration
 
-所有配置在 `.env` 文件：
+All configuration in `.env` file:
 
 ```bash
-# LLM 提供商配置
+# LLM Provider Configuration
 OPENAI_API_KEY=sk-your-key-here
 ANTHROPIC_API_KEY=sk-ant-your-key-here
-LLM_PROVIDER=openai              # openai 或 anthropic
-LLM_MODEL=gpt-4o-mini            # 模型名称
+LLM_PROVIDER=openai              # openai or anthropic
+LLM_MODEL=gpt-4o-mini            # model name
 
-# 数据库
+# Database
 DATABASE_URL=postgresql+asyncpg://user:pass@localhost:5432/agentflow
 
-# Redis（任务队列）
+# Redis (task queue)
 REDIS_URL=redis://localhost:6379/0
 
-# 功能开关
-ENABLE_AUDIT_LOG=true            # 开启审计日志
-ENABLE_COST_TRACKING=true        # 跟踪 LLM 调用成本
-ENABLE_AUTO_ROUTING=true         # 自动路由
-ENABLE_AUTO_REPLY=false          # 自动发送回复（默认关闭）
+# Feature Flags
+ENABLE_AUDIT_LOG=true            # Enable audit logging
+ENABLE_COST_TRACKING=true        # Track LLM call costs
+ENABLE_AUTO_ROUTING=true         # Auto-routing
+ENABLE_AUTO_REPLY=false          # Auto-send replies (disabled by default)
 ```
 
 ---
 
-## 测试
+## Testing
 
-### 运行所有测试
+### Run All Tests
 
 ```bash
 pytest tests/ -v --cov=app --cov-report=html
 ```
 
-### 测试覆盖率
+### Test Coverage
 
-运行后打开 `htmlcov/index.html` 查看测试覆盖率报告。
+After running, open `htmlcov/index.html` to view coverage report.
 
-**当前覆盖率目标：** > 80%
+**Current coverage target:** > 80%
 
 ---
 
-## 部署
+## Deployment
 
-### 本地开发
+### Local Development
 
 ```bash
 docker-compose up --build
 ```
 
-### 生产环境（AWS）
+### Production (AWS)
 
-项目包含完整 AWS ECS 部署架构设计（见 `docs/design.md`）：
+Project includes complete AWS ECS deployment architecture design (see `docs/design.md`):
 
-- ECS Fargate（API + Worker 服务）
-- RDS PostgreSQL（数据库）
-- ElastiCache Redis（任务队列）
+- ECS Fargate (API + Worker services)
+- RDS PostgreSQL (database)
+- ElastiCache Redis (task queue)
 - Application Load Balancer
-- S3（附件存储）
-- CloudWatch（日志和监控）
+- S3 (attachment storage)
+- CloudWatch (logs and monitoring)
 
-CI/CD 流水线：
-1. 推送代码到 `main` 分支
-2. GitHub Actions 自动运行测试
-3. 构建 Docker 镜像推送到 ECR
-4. 自动部署到 ECS
+CI/CD Pipeline:
+1. Push code to `main` branch
+2. GitHub Actions auto-runs tests
+3. Build Docker image push to ECR
+4. Auto-deploy to ECS
 
 ---
 
-## 项目文件结构
+## Project Structure
 
 ```
 agentflow-desk/
-├── app/                        # 应用代码
-│   ├── api/                    # API 路由
-│   │   ├── tickets.py          # 工单端点
-│   │   ├── knowledge.py        # 知识库端点
-│   │   ├── metrics.py          # 指标端点
-│   │   └── schemas.py          # 数据模型
-│   ├── core/                   # 核心配置
-│   │   ├── config.py           # 环境变量配置
-│   │   └── database.py         # 数据库连接
-│   ├── models/                 # 数据库模型
-│   │   └── tables.py           # SQLAlchemy 模型
-│   ├── services/               # 业务逻辑
-│   │   ├── llm.py              # LLM 服务
-│   │   └── retrieval.py        # 向量检索服务
-│   ├── workers/                # 后台任务
-│   │   ├── celery_app.py       # Celery 配置
-│   │   └── tasks.py            # 异步任务
-│   └── main.py                 # FastAPI 应用入口
-├── tests/                      # 测试
-├── docs/                       # 文档
-│   └── design.md               # 技术设计文档（15章节）
-├── docker/                     # Docker 配置
-├── alembic/                    # 数据库迁移
-├── .github/workflows/          # CI/CD 配置
-├── docker-compose.yml          # 本地开发环境
-├── pyproject.toml              # 依赖管理
-└── README.md                   # 本文件
+├── app/                        # Application code
+│   ├── api/                    # API routes
+│   │   ├── tickets.py          # Ticket endpoints
+│   │   ├── knowledge.py        # Knowledge base endpoints
+│   │   ├── metrics.py          # Metrics endpoints
+│   │   └── schemas.py          # Data models
+│   ├── core/                   # Core configuration
+│   │   ├── config.py           # Environment config
+│   │   └── database.py         # Database connection
+│   ├── models/                 # Database models
+│   │   └── tables.py           # SQLAlchemy models
+│   ├── services/               # Business logic
+│   │   ├── llm.py              # LLM service
+│   │   └── retrieval.py        # Vector retrieval service
+│   ├── workers/                # Background tasks
+│   │   ├── celery_app.py       # Celery config
+│   │   └── tasks.py            # Async tasks
+│   └── main.py                 # FastAPI app entry point
+├── tests/                      # Tests
+├── docs/                       # Documentation
+│   └── design.md               # Technical design doc (15 chapters)
+├── docker/                     # Docker config
+├── alembic/                    # Database migrations
+├── .github/workflows/          # CI/CD config
+├── docker-compose.yml          # Local dev environment
+├── pyproject.toml              # Dependency management
+└── README.md                   # This file
 ```
 
 ---
 
-## 设计原则
+## Design Principles
 
-### 1. 简单优于复杂
+### 1. Simple Over Complex
 
-- 状态机比自由 Agent 更可控
-- 规则引擎比复杂 AI 决策更透明
-- 固定流程比动态编排更好调试
+- State machine more controllable than free agent
+- Rule engine more transparent than complex AI decisions
+- Fixed processes easier to debug than dynamic orchestration
 
-### 2. 可观测性第一
+### 2. Observability First
 
-- 每个状态变更都记录事件
-- 每次 LLM 调用都记录 token 和成本
-- 所有错误都带上下文和堆栈
+- Every state change logged as event
+- Every LLM call tracked for tokens and cost
+- All errors include context and stack trace
 
-### 3. 渐进增强
+### 3. Progressive Enhancement
 
-- MVP 能跑（分类 + 草稿 + 路由）
-- 加知识库检索（RAG）
-- 加人工审核闭环
-- 加 A/B 测试框架
+- MVP works (classification + drafting + routing)
+- Add knowledge base retrieval (RAG)
+- Add human review loop
+- Add A/B testing framework
 
 ---
 
-## 已实现功能
+## Implemented Features
 
-✅ **Phase 1: 基础架构**
-- FastAPI 应用骨架
-- Docker Compose 本地环境
-- 完整技术设计文档
+✅ **Phase 1: Foundation**
+- FastAPI application skeleton
+- Docker Compose local environment
+- Complete technical design documentation
 
-✅ **Phase 2: 核心功能**
-- LLM 集成（OpenAI + Claude）
-- 数据库模型和迁移
-- REST API 端点
-- Celery 异步任务
-- 工单分类、草稿生成、路由
+✅ **Phase 2: Core Features**
+- LLM integration (OpenAI + Claude)
+- Database models and migrations
+- REST API endpoints
+- Celery async tasks
+- Ticket classification, draft generation, routing
 
-✅ **Phase 3: 增强功能**
-- 知识库向量检索（RAG）
-- 系统指标监控端点
-- 完整测试套件
+✅ **Phase 3: Enhanced Features**
+- Knowledge base vector retrieval (RAG)
+- System metrics monitoring endpoint
+- Complete test suite
 - GitHub Actions CI/CD
 
 ---
 
-## 路线图（未来可选）
+## Roadmap (Future Optional)
 
-**Phase 4: 生产优化**
-- [ ] 真实 pgvector 查询（替代 Python cosine）
-- [ ] JWT 认证和多租户隔离
-- [ ] Webhook 回调通知
-- [ ] 实时 WebSocket 更新
+**Phase 4: Production Optimization**
+- [ ] Real pgvector query (replace Python cosine)
+- [ ] JWT authentication and multi-tenant isolation
+- [ ] Webhook callback notifications
+- [ ] Real-time WebSocket updates
 
-**Phase 5: 高级功能**
-- [ ] 多代理协作框架
-- [ ] 自定义 prompt 模板
-- [ ] A/B 测试框架
-- [ ] 实时指标仪表盘
+**Phase 5: Advanced Features**
+- [ ] Multi-agent collaboration framework
+- [ ] Custom prompt templates
+- [ ] A/B testing framework
+- [ ] Real-time metrics dashboard
 
 ---
 
-## 常见问题
+## FAQ
 
-### Q: 这个项目能直接用吗？
+### Q: Can this project be used directly?
 
-A: 能。本地 `docker-compose up` 就能跑，有完整的 API 和后台处理。
+A: Yes. Run `docker-compose up` locally and you have a complete API and background processing system.
 
-### Q: 需要什么 API key？
+### Q: What API key is needed?
 
-A: OpenAI（https://platform.openai.com/api-keys）或 Claude（https://console.anthropic.com/）二选一。
+A: OpenAI (https://platform.openai.com/api-keys) or Claude (https://console.anthropic.com/) - choose one.
 
-### Q: 支持中文吗？
+### Q: Does it support non-English languages?
 
-A: 支持。LLM 本身多语言，工单可以是中文，自动分类和草稿生成都支持中文。
+A: Yes. LLM itself is multilingual, tickets can be in any language, auto-classification and draft generation support all languages.
 
-### Q: 成本多少？
+### Q: What's the cost?
 
-A: LLM 调用成本：
-- 分类一个工单：约 $0.0003（GPT-4o-mini）
-- 生成草稿：约 $0.001-0.003
-- 每月处理 10000 个工单：约 $10-30
+A: LLM call costs:
+- Classify one ticket: ~$0.0003 (GPT-4o-mini)
+- Generate draft: ~$0.001-0.003
+- Process 10,000 tickets/month: ~$10-30
 
-基础设施（AWS）：
-- 小型部署：约 $50-100/月
-- 中型部署：约 $200-500/月
+Infrastructure (AWS):
+- Small deployment: ~$50-100/month
+- Medium deployment: ~$200-500/month
 
-### Q: 性能如何？
+### Q: Performance?
 
-A: 本地测试：
-- API 响应：< 200ms
-- 工单分类：2-5 秒
-- 草稿生成：3-8 秒
+A: Local testing:
+- API response: < 200ms
+- Ticket classification: 2-5 seconds
+- Draft generation: 3-8 seconds
 
-生产环境（2 API + 2 Worker）：
-- 支持 100+ QPS
-- 每秒处理 20-30 个工单
+Production (2 API + 2 Worker):
+- Supports 100+ QPS
+- Process 20-30 tickets per second
 
-### Q: 安全吗？
+### Q: Is it secure?
 
 A: 
-- 所有 API key 存环境变量
-- 数据库加密传输（TLS）
-- 支持 PII 脱敏
-- 完整审计日志
+- All API keys in environment variables
+- Database encrypted transmission (TLS)
+- Supports PII redaction
+- Complete audit logs
 
-### Q: 怎么扩展？
+### Q: How to scale?
 
 A: 
-- API 无状态，水平扩展（加机器）
-- Worker 按队列深度自动扩容
-- 数据库读写分离 + 连接池
+- API is stateless, horizontal scaling (add machines)
+- Workers auto-scale based on queue depth
+- Database read-write separation + connection pooling
 
 ---
 
-## 贡献代码
+## Contributing
 
-见 [CONTRIBUTING.md](CONTRIBUTING.md)
-
----
-
-## 许可证
-
-MIT License - 见 [LICENSE](LICENSE)
+See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ---
 
-## 联系方式
+## License
 
-- **GitHub Issues:** 报告 bug 或功能请求
-- **项目文档:** `docs/design.md`（完整技术设计）
-- **API 文档:** 运行项目后访问 `/docs`
+MIT License - see [LICENSE](LICENSE)
 
 ---
 
-## 致谢
+## Contact
 
-这个项目是为以下岗位设计的展示项目：
+- **GitHub Issues:** Report bugs or feature requests
+- **Project Documentation:** `docs/design.md` (complete technical design)
+- **API Documentation:** After running project, visit `/docs`
+
+---
+
+## Acknowledgments
+
+This project is a showcase project designed for the following job posting:
 
 > **Senior Python & AI Engineer — Intelligent Workflow Automation & Model Integration**
 
-**展示技能：**
-✓ Python 3.11 + FastAPI 异步编程  
-✓ LLM 集成（OpenAI / Claude）  
-✓ 工作流自动化（状态机 + Celery）  
-✓ REST API 开发  
-✓ PostgreSQL + 向量数据库  
-✓ Docker 容器化  
-✓ CI/CD（GitHub Actions）  
-✓ 多租户 SaaS 架构  
-✓ 情感分析和工单分类  
+**Demonstrates skills:**
+✓ Python 3.11 + FastAPI async programming  
+✓ LLM integration (OpenAI / Claude)  
+✓ Workflow automation (state machine + Celery)  
+✓ REST API development  
+✓ PostgreSQL + vector database  
+✓ Docker containerization  
+✓ CI/CD (GitHub Actions)  
+✓ Multi-tenant SaaS architecture  
+✓ Sentiment analysis and ticket classification  
 
-完整代码、设计文档、测试、CI/CD、Docker 环境，开箱即用。
+Complete code, design documentation, tests, CI/CD, Docker environment, ready to use out of the box.
