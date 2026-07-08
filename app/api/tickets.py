@@ -44,8 +44,9 @@ async def create_ticket(
     await db.commit()
     await db.refresh(ticket)
 
-    # TODO: Enqueue Celery task for classification
-    # classify_ticket.delay(str(ticket.id))
+    # Enqueue Celery task for classification
+    from app.workers.tasks import classify_ticket
+    classify_ticket.delay(str(ticket.id))
 
     return TicketResponse.model_validate(ticket)
 
@@ -123,8 +124,9 @@ async def classify_ticket_endpoint(
     if not ticket:
         raise HTTPException(status_code=404, detail="Ticket not found")
 
-    # TODO: Enqueue Celery task
-    # classify_ticket.delay(str(ticket_id))
+    # Enqueue Celery task
+    from app.workers.tasks import classify_ticket
+    classify_ticket.delay(str(ticket_id))
 
     return {"message": "Classification task enqueued", "ticket_id": str(ticket_id)}
 
@@ -146,8 +148,9 @@ async def draft_reply_endpoint(
     if not ticket:
         raise HTTPException(status_code=404, detail="Ticket not found")
 
-    # TODO: Enqueue Celery task
-    # draft_reply.delay(str(ticket_id))
+    # Enqueue Celery task
+    from app.workers.tasks import draft_reply
+    draft_reply.delay(str(ticket_id))
 
     return {"message": "Draft reply task enqueued", "ticket_id": str(ticket_id)}
 
@@ -169,7 +172,8 @@ async def route_ticket_endpoint(
     if not ticket:
         raise HTTPException(status_code=404, detail="Ticket not found")
 
-    # TODO: Enqueue Celery task
-    # route_ticket.delay(str(ticket_id))
+    # Enqueue Celery task
+    from app.workers.tasks import route_ticket
+    route_ticket.delay(str(ticket_id))
 
     return {"message": "Routing task enqueued", "ticket_id": str(ticket_id)}
