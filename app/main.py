@@ -4,6 +4,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.tickets import router as tickets_router
+from app.api.knowledge import router as knowledge_router
+from app.api.metrics import router as metrics_router
 from app.core.config import settings
 
 app = FastAPI(
@@ -25,6 +27,8 @@ app.add_middleware(
 
 # Include routers
 app.include_router(tickets_router)
+app.include_router(knowledge_router)
+app.include_router(metrics_router)
 
 
 @app.get("/api/v1/health")
