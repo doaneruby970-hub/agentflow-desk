@@ -1,12 +1,12 @@
 [project]
 name = "agentflow-desk"
 version = "0.1.0"
-description = "Production-grade Python backend for AI-powered support workflow automation"
+description = "Python backend reference project for AI-assisted support workflow automation"
 readme = "README.md"
 requires-python = ">=3.11"
 license = {text = "MIT"}
 authors = [
-    {name = "Your Name", email = "your.email@example.com"}
+    {name = "Yingqiang"}
 ]
 keywords = ["ai", "llm", "workflow", "automation", "fastapi", "celery", "rag", "support"]
 classifiers = [
@@ -57,10 +57,10 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yourusername/agentflow-desk"
-Documentation = "https://github.com/yourusername/agentflow-desk/blob/main/README.md"
-Repository = "https://github.com/yourusername/agentflow-desk"
-Issues = "https://github.com/yourusername/agentflow-desk/issues"
+Homepage = "https://github.com/doaneruby970-hub/agentflow-desk"
+Documentation = "https://github.com/doaneruby970-hub/agentflow-desk/blob/main/README.md"
+Repository = "https://github.com/doaneruby970-hub/agentflow-desk"
+Issues = "https://github.com/doaneruby970-hub/agentflow-desk/issues"
 
 [build-system]
 requires = ["setuptools>=75.0.0", "wheel"]
